@@ -74,7 +74,7 @@ def rk4_step(s, v, x, dt):#methode om een differentiaalvergelijking benaderend o
     return s_next, v_next, x_next
 
 dt = 0.001 #om de hoeveel seconden er een waarde wordt berekend, hoe kleiner hoe nauwkeuriger
-t_max = 10 #tot wanneer de waarden worden berekend
+t_max = 4 #tot wanneer de waarden worden berekend
 n_steps = int(t_max / dt) #aantal stappen die er bijgevolg gezet moeten worden
 
 # Beginwaarden
@@ -106,16 +106,19 @@ plt.figure(figsize=(12, 10))
 plt.subplot(4, 1, 1)
 plt.plot(t_vals, s_vals, label='s(t)', color='blue')
 plt.ylabel('Afgelegde afstand (m)')
+plt.xlabel('Tijd t (s)')
 plt.grid()
 
 plt.subplot(4, 1, 2)
 plt.plot(t_vals, v_vals, label='v(t)', color='green')
 plt.ylabel('Snelheid (m/s)')
+plt.xlabel('Tijd t (s)')
 plt.grid()
 
 plt.subplot(4, 1, 3)
 plt.plot(t_vals, a_vals, label='a(t)', color='red')
 plt.ylabel('Versnelling (N/kg)')
+plt.xlabel('Tijd t (s)')
 plt.grid()
 
 plt.subplot(4, 1, 4)
